@@ -13,7 +13,7 @@ scRNA <- FindVariableFeatures(scRNA, selection.method = "vst", nfeatures = 2000)
 
 ####Scaling the data
 scale.genes <- rownames(scRNA)
-scRNA <- ScaleData(scRNA, features = scale.genes, vars.to.regress = c("nCount_RNA", "percent.mt")
+scRNA <- ScaleData(scRNA, features = scale.genes, vars.to.regress = c("nCount_RNA", "percent.mt"))
 
 #### Perform linear dimensional reduction
 scRNA <- RunPCA(scRNA, features = VariableFeatures(scRNA))
